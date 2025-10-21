@@ -4,6 +4,7 @@ Lab Task 2: Creating visually appealing UI
 Objective: 
   1. Experiment .NET MAUI's layout class using the Grid layout and add images and texts. 
   2. Practice customizing the UI, colors, fonts, and spacing  
+
 Instructions: 
   1. Recreate the UI below using Grid Layout. 
   2. You may use the images from the Resource folder that I have shared. Or you can use your own photos. 
