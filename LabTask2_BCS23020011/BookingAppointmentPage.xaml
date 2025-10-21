@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LabTask2_BCS23020011.BookingAppointmentPage"
+             Title="Book an Appointment">
+
+    <VerticalStackLayout Spacing="15" Padding="20">
+
+        <Label Text="Schedule Your Visit" 
+               FontSize="24" 
+               FontAttributes="Bold" 
+               HorizontalOptions="Center" />
+
+        <Label Text="Please fill out the form below to meet your new friend." 
+               FontSize="14" 
+               HorizontalOptions="Center" 
+               Margin="0,0,0,20" />
+
+        <Frame Padding="10" CornerRadius="10" BorderColor="LightGray">
+            <Entry x:Name="NameEntry" Placeholder="Your Name" />
+        </Frame>
+
+        <Frame Padding="10" CornerRadius="10" BorderColor="LightGray">
+            <Entry x:Name="PhoneEntry" Placeholder="Your Phone Number" Keyboard="Telephone" />
+        </Frame>
+
+        <Label Text="Please Select Date:" Margin="0,10,0,0" />
+        <DatePicker x:Name="AppointmentDatePicker" />
+
+        <Label Text="Please Select Time:" Margin="0,10,0,0" />
+        <TimePicker x:Name="AppointmentTimePicker" />
+
+        <Button Text="Submit Appointment" 
+                BackgroundColor="#F0E68C" 
+                TextColor="#2C2C2C" 
+                CornerRadius="25" 
+                HeightRequest="50" 
+                FontAttributes="Bold" 
+                Margin="0,20,0,0"
+                Clicked="OnSubmitClicked" />
+
+    </VerticalStackLayout>
+</ContentPage>

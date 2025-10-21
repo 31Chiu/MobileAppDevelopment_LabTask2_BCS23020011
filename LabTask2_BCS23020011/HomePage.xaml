@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LabTask2_BCS23020011.HomePage"
+             Title="Find Your Best Buddy"
+             BackgroundColor="#F4F4F4">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="15">
+
+            <Label 
+                Text="Adopt a Pet"
+                FontSize="32"
+                FontAttributes="Bold"
+                Margin="10,10,10,20"
+                TextColor="#2C2C2C"/>
+
+            <CollectionView x:Name="PetsCollectionView"
+                            SelectionMode="None">
+
+                <CollectionView.ItemsLayout>
+                    <GridItemsLayout Orientation="Vertical"
+                                     Span="2"
+                                     HorizontalItemSpacing="10"
+                                     VerticalItemSpacing="10" />
+                </CollectionView.ItemsLayout>
+
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Border StrokeShape="RoundRectangle 20"
+                                StrokeThickness="0"
+                                BackgroundColor="White"
+                                Padding="0">
+
+                            <Border.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="OnPetTapped" />
+                            </Border.GestureRecognizers>
+
+                            <Grid RowDefinitions="180, Auto">
+                                <Image Grid.Row="0"
+                                       Source="{Binding Image}"
+                                       Aspect="AspectFill"
+                                       HeightRequest="180">
+                                    <Image.Clip>
+                                        <RoundRectangleGeometry CornerRadius="20,20,0,0" Rect="0,0,200,180" />
+                                    </Image.Clip>
+                                </Image>
+
+                                <Label Grid.Row="1"
+                                       Text="{Binding Name}"
+                                       FontAttributes="Bold"
+                                       FontSize="18"
+                                       Padding="15"
+                                       TextColor="#2C2C2C" />
+                            </Grid>
+                        </Border>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+
+            </CollectionView>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

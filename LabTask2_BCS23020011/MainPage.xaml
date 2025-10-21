@@ -1,0 +1,170 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LabTask2_BCS23020011.MainPage"
+             BackgroundColor="#F4F4F4">
+
+    <Grid RowDefinitions="Auto, *"
+          IgnoreSafeArea="True">
+
+        <Grid Grid.Row="0" 
+              BackgroundColor="#4A00E0" 
+              Padding="15,45,15,15">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            <Label Grid.Column="0"
+                   Text="CHIU SIEW CHIN" 
+                   TextColor="White"
+                   FontSize="18"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Start" />
+            <Label Grid.Column="1"
+                   Text="BCS23020011" 
+                   TextColor="White"
+                   FontSize="18"
+                   FontAttributes="Bold"
+                   HorizontalOptions="End" />
+        </Grid>
+
+        <Grid Grid.Row="1">
+
+            <Image x:Name="PetImage"
+                   Source="pet.jpeg" 
+                   Aspect="AspectFill"
+                   VerticalOptions="Start"
+                   HeightRequest="400" />
+
+            <Border VerticalOptions="End"
+                    BackgroundColor="White"
+                    StrokeShape="RoundRectangle 25"
+                    StrokeThickness="0"
+                    Margin="15,0,15,15"
+                    Padding="20">
+
+                <Grid RowDefinitions="Auto, Auto, Auto, Auto"
+                      ColumnDefinitions="*, Auto"
+                      RowSpacing="15">
+
+                    <VerticalStackLayout Grid.Row="0" Grid.Column="0" Spacing="5">
+                        <Label x:Name="PetNameLabel"
+                               Text="Robin Hood" 
+                               FontSize="24" 
+                               FontAttributes="Bold" 
+                               TextColor="#2C2C2C" />
+                        <Label x:Name="PetBreedLabel"
+                               Text="Pug" 
+                               FontSize="20" 
+                               TextColor="#5A5A5A" />
+                        <HorizontalStackLayout Spacing="5" VerticalOptions="Center">
+                            <Image Source="location.png"
+                                   HeightRequest="25"
+                                   WidthRequest="25"
+                                   VerticalOptions="Center" />
+                            <Label x:Name="PetLocationLabel"
+                                   Text="Brorte B. Tamuin, Raritau Panjat" 
+                                   FontSize="15" 
+                                   TextColor="#AAAAAA"
+                                   VerticalOptions="Center" />
+                        </HorizontalStackLayout>
+                    </VerticalStackLayout>
+
+                    <VerticalStackLayout Grid.Row="0" Grid.Column="1" Spacing="5" VerticalOptions="Start" HorizontalOptions="End">
+                        <Image x:Name="PetGenderImage"
+                               Source="symbolmale.png"
+                               HeightRequest="32"
+                               WidthRequest="32"
+                               HorizontalOptions="End" />
+                        <HorizontalStackLayout Spacing="5" VerticalOptions="Center">
+                            <Image Source="clock.png"
+                                   HeightRequest="25"
+                                   WidthRequest="25"
+                                   VerticalOptions="Center" />
+                            <Label x:Name="PetAgeLabel"
+                                   Text="1 year old" 
+                                   FontSize="20" 
+                                   TextColor="#5A5A5A" 
+                                   VerticalOptions="Center" />
+                        </HorizontalStackLayout>
+                    </VerticalStackLayout>
+
+
+                    <Border Grid.Row="1" Grid.ColumnSpan="2" 
+                            Stroke="#EEEEEE" 
+                            StrokeThickness="1" 
+                            Padding="10" 
+                            StrokeShape="RoundRectangle 10">
+                        <Grid ColumnDefinitions="Auto, *, Auto">
+                            <Image x:Name="OwnerImage"
+                                   Source="owner.png" 
+                                   Aspect="AspectFill" 
+                                   HeightRequest="50" 
+                                   WidthRequest="50">
+                                <Image.Clip>
+                                    <RoundRectangleGeometry CornerRadius="25,25,25,25" Rect="0,0,50,50"/>
+                                </Image.Clip>
+                            </Image>
+                            <VerticalStackLayout Grid.Column="1" Padding="10,0" VerticalOptions="Center" Spacing="2">
+                                <Label x:Name="OwnerNameLabel"
+                                       Text="Mr. Chiu Siew Chin" 
+                                       FontAttributes="Bold" 
+                                       TextColor="#2C2C2C" />
+                                <Label Text="Owner" 
+                                       FontSize="12" 
+                                       TextColor="#AAAAAA" />
+                            </VerticalStackLayout>
+                            <Label x:Name="PostDateLabel"
+                                   Grid.Column="2" 
+                                   Text="1/1/2024" 
+                                   FontSize="12" 
+                                   TextColor="#AAAAAA" 
+                                   VerticalOptions="Start" />
+                        </Grid>
+                    </Border>
+
+                    <Label x:Name="DescriptionLabel"
+                           Grid.Row="2" Grid.ColumnSpan="2"
+                           Text="Yo, Robin the Pug is simply a tiny tornado of fun, wrinkles, and endless charm." 
+                           FontSize="14" 
+                           LineHeight="1.2"
+                           TextColor="#5A5A5A" />
+
+                    <Border Grid.Row="3" Grid.Column="0"
+                            Stroke="#F0E68C" 
+                            StrokeThickness="2"
+                            BackgroundColor="Transparent"
+                            StrokeShape="RoundRectangle 25"
+                            HeightRequest="50"
+                            WidthRequest="50"
+                            Padding="0"
+                            HorizontalOptions="Start">
+
+                        <Label x:Name="HeartIcon" 
+                               Text="♡" 
+                               FontSize="24" 
+                               TextColor="#F0E68C"
+                               VerticalOptions="Center"
+                               HorizontalOptions="Center" >
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="OnHeartClicked"/>
+                            </Label.GestureRecognizers>
+                        </Label>
+                    </Border>
+
+                    <Button Grid.Row="3" Grid.Column="1"
+                            Text="Adoption"
+                            BackgroundColor="#F0E68C"
+                            TextColor="#2C2C2C"
+                            CornerRadius="25"
+                            HeightRequest="50"
+                            WidthRequest="180"
+                            FontAttributes="Bold"
+                            Clicked="OnAdoptionClicked">
+                    </Button>
+
+                </Grid>
+            </Border>
+        </Grid>
+    </Grid>
+</ContentPage>
